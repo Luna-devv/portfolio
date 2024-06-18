@@ -56,6 +56,7 @@ export default function RootLayout({
 }>) {
     return (
         <html
+            data-theme="dark"
             lang="en"
             className={cn(
                 "dark:text-neutral-200 text-neutral-800",
