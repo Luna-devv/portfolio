@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    background-color: #000000!important;
+}
+
+.avatar-animation:hover {
+    transform: rotateZ(1.6deg) rotateY(10deg);
+}
