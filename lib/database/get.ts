@@ -7,9 +7,16 @@ export function getConfig(language: string) {
         .executeTakeFirst();
 }
 
+export function getFacts() {
+    return db
+        .selectFrom("config_facts")
+        .selectAll()
+        .execute();
+}
+
 export function getSocials() {
     return db
-        .selectFrom("socials")
+        .selectFrom("config_socials")
         .selectAll()
         .execute();
 }

@@ -1,6 +1,5 @@
 import type { Database } from "@/lib/database/schema";
 import { cn } from "@/utils/cn";
-import { config as staticConfig } from "@/utils/config";
 import { lilita } from "@/utils/fonts";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
@@ -11,12 +10,13 @@ import { Social } from "./socials";
 
 export function User({
     config,
+    facts,
     socials
 }: {
     config: Database["config"];
-    socials: Database["socials"][];
+    facts: Database["config_facts"][];
+    socials: Database["config_socials"][];
 }) {
-    const conf = staticConfig();
 
     return (
         <div className="flex flex-col gap-2 max-w-96 w-full shrink-0">
@@ -49,25 +49,29 @@ export function User({
             </div>
 
             <div className="flex flex-col gap-1 mt-4 text-lg">
-                {Object.entries(conf.facts).map(([name, variable]) => (
-                    <Fact
-                        key={name}
-                        name={name}
-                        variable={variable}
-                    />
-                ))}
+                {facts
+                    .sort((a, b) => a.id - b.id)
+                    .map((fact) => (
+                        <Fact
+                            key={fact.name}
+                            name={fact.name}
+                            value={fact.value}
+                        />
+                    ))}
             </div>
 
             <Divider className="w-full bg-neutral-600/50 mt-2" />
 
             <div className="flex flex-col gap-1 mt-2 text-lg">
-                {socials.map((social) => (
-                    <Social
-                        key={social.platform}
-                        platform={social.platform}
-                        url={social.url}
-                    />
-                ))}
+                {socials
+                    .sort((a, b) => a.id - b.id)
+                    .map((social) => (
+                        <Social
+                            key={social.platform}
+                            platform={social.platform}
+                            url={social.url}
+                        />
+                    ))}
             </div>
         </div>
     );

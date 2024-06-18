@@ -1,6 +1,6 @@
 import Markdown from "@/components/markdown";
 import { User } from "@/components/user";
-import { getConfig, getSocials } from "@/lib/database/get";
+import { getConfig, getFacts, getSocials } from "@/lib/database/get";
 import { readFile } from "fs/promises";
 
 export const dynamic = "force-static";
@@ -9,8 +9,9 @@ export const revalidate = false;
 export default async function Home() {
     const about = await readFile(process.cwd() + "/public/about.md", "utf-8");
 
-    const [config, socials] = await Promise.all([
+    const [config, facts, socials] = await Promise.all([
         getConfig("en"),
+        getFacts(),
         getSocials()
     ]);
 
@@ -25,6 +26,7 @@ export default async function Home() {
         <main className="flex flex-col md:flex-row gap-8 w-full">
             <User
                 config={config}
+                facts={facts}
                 socials={socials}
             />
 

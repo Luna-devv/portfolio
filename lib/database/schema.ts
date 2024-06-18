@@ -1,20 +1,29 @@
 import type { ColumnType } from "kysely";
 
+/* Config */
+
 interface ConfigTable {
     avatar_url: string;
     bio: string;
     birthday: string | null; // this should be like "17 April 2002"
     name_pronunciation: string;
     nickname: string;
-    pronouns: string;
-    timezone: string;
     username: string;
 }
 
-interface SocialTable {
+interface ConfigFactTable {
+    id: number;
+    name: string;
+    value: string;
+}
+
+interface ConfigSocialTable {
+    id: number;
     platform: string;
     url: string;
 }
+
+/* Non-Config */
 
 interface UserTable {
     avatar: string | null;
@@ -35,9 +44,12 @@ interface ReviewTable {
     user_id: string;
 }
 
+/* Database herself */
+
 export interface Database {
     config: ConfigTable;
+    config_facts: ConfigFactTable;
+    config_socials: ConfigSocialTable;
     reviews: ReviewTable;
-    socials: SocialTable;
     users: UserTable;
 }
