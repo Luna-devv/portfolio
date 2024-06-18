@@ -1,5 +1,6 @@
+import type { Database } from "@/lib/database/schema";
 import { cn } from "@/utils/cn";
-import { config } from "@/utils/config";
+import { config as staticConfig } from "@/utils/config";
 import { lilita } from "@/utils/fonts";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
@@ -8,29 +9,23 @@ import { HiChevronRight } from "react-icons/hi";
 import { Fact } from "./facts";
 import { Social } from "./socials";
 
-export const revalidate = 1; // once per minute
-
 export function User({
-    avatar_url,
-    bio,
-    nickname,
-    username
+    config,
+    socials
 }: {
-    avatar_url: string | null;
-    bio: string;
-    nickname: string | null;
-    username: string;
+    config: Database["config"];
+    socials: Database["socials"][];
 }) {
-    const conf = config();
+    const conf = staticConfig();
 
     return (
         <div className="flex flex-col gap-2 max-w-96 w-full shrink-0">
             <Image
-                alt={username}
+                alt={config.username}
                 className="rounded-2xl avatar-animation duration-500 ease-in-out transform-gpu shadow-black"
                 height={384}
-                src={avatar_url
-                    ? avatar_url + "?size=512"
+                src={config.avatar_url
+                    ? config.avatar_url + "?size=512"
                     : "https://cdn.discordapp.net/embed/avatars/3.png"
                 }
                 width={384}
@@ -38,19 +33,19 @@ export function User({
 
             <div className={cn(lilita.className, "flex items-end gap-3 mt-4")}>
                 <span className="text-5xl">
-                    {nickname}
+                    {config.nickname}
                 </span>
                 <HiChevronRight className="mb-1.5 size-5" />
                 <span className="text-3xl opacity-80">
-                    {username}
+                    {config.username}
                 </span>
                 <span className="text-3xl opacity-80 text-violet-200">
-                    /{conf.name_pronunciation}/
+                    /{config.name_pronunciation}/
                 </span>
             </div>
 
             <div className="text-xl">
-                {bio}
+                {config.bio}
             </div>
 
             <div className="flex flex-col gap-1 mt-4 text-lg">
@@ -66,11 +61,11 @@ export function User({
             <Divider className="w-full bg-neutral-600/50 mt-2" />
 
             <div className="flex flex-col gap-1 mt-2 text-lg">
-                {Object.entries(conf.socials).map(([name, url]) => (
+                {socials.map((social) => (
                     <Social
-                        key={name}
-                        platform={name}
-                        url={url}
+                        key={social.platform}
+                        platform={social.platform}
+                        url={social.url}
                     />
                 ))}
             </div>

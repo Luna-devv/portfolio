@@ -8,7 +8,9 @@ export function config() {
         if (typeof v === "string" && v.startsWith("env:")) {
             const val = process.env[v.split(":")[1]];
 
-            if (val) conf[k] = val;
+            if (!val) throw Error("Config key '" + k + "' is set to '" + v + "' but env variable was not present.");
+
+            conf[k] = val;
             continue;
         }
 

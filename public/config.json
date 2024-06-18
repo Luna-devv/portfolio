@@ -1,17 +1,9 @@
 {
     "id": "821472922140803112",
     "token": "env:TOKEN",
+    "postgres_url": "env:POSTGRES_URL",
 
-    "bio": "インターネットでかわいいことをやっているんだ",
-    "name_pronunciation": "melisa",
-    
     "facts": {
         "Current Time": "var:TIME"
-    },
-
-    "socials": {
-        "discord": "https://discord.com/invite/DNyyA2HFM9",
-        "github": "https://github.com/Luna-devv",
-        "ko-fi": "https://ko-fi.com/mwlica"
     }
 }
