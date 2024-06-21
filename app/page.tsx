@@ -3,7 +3,6 @@ import { User } from "@/components/user";
 import { getConfig, getFacts, getSocials } from "@/lib/database/get";
 import { readFile } from "fs/promises";
 
-export const dynamic = "force-static";
 export const revalidate = false;
 
 export default async function Home() {
