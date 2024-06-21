@@ -8,7 +8,7 @@ import { Provider } from "./provider";
 
 export const viewport: Viewport = {
     themeColor: "#b09bf1",
-    initialScale: 0.85
+    initialScale: 1
 };
 
 export async function generateMetadata(): Promise<Metadata> {
