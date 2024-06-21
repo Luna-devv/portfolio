@@ -33,7 +33,7 @@ export function Fact({
 
             <Chip
                 color="secondary"
-                className="ml-auto text-sm h-6 border-neutral-700 border-[px]"
+                className="ml-auto text-sm h-6 border-neutral-700 border-[1px]"
                 radius="full"
                 variant="dot"
             >
