@@ -1,20 +1,41 @@
 "use client";
 
 import { compareTimezones, hours24ToHours12 } from "@/utils/time";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function LocalTime({ timezone }: { timezone: string; }) {
+    const [clock, setClock] = useState<string>();
     const [diff, setDiff] = useState<string>();
 
-    const date = new Date(new Date().toLocaleString("en-US", { timeZone: timezone }));
+    const ref = useRef<NodeJS.Timeout>();
 
-    const { hours, time } = hours24ToHours12(date.getHours());
-    const clocktime = `${hours}:${date.getMinutes().toString().padStart(2, "0")} ${time}`;
+    function updateTime() {
+        const date = new Date(new Date().toLocaleString("en-US", { timeZone: timezone }));
+        const { hours, time } = hours24ToHours12(date.getHours());
+
+        const str = `${hours}:${date.getMinutes().toString().padStart(2, "0")} ${time}`;
+
+        if (str === clock) return str;
+        setClock(str);
+
+        return str;
+    }
 
     useEffect(() => {
         const timezoneDifference = compareTimezones(timezone, Intl.DateTimeFormat().resolvedOptions().timeZone);
         setDiff(timezoneDifference);
+
+        if (ref.current) return;
+
+        ref.current = setInterval(() => {
+            updateTime();
+        }, 10_000);
+
+        return (() => {
+            clearInterval(ref.current);
+            ref.current = undefined;
+        });
     }, []);
 
-    return `${clocktime} - ${diff || "same as you"}`;
+    return `${clock || updateTime()} - ${diff || "same as you"}`;
 }
