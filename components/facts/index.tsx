@@ -26,29 +26,40 @@ export function Fact({
     return (
         <div className="flex items-center gap-2 w-full">
             <span className="text-violet-400">
-                <FactIcon value={value} />
+                <FactIcon name={name} value={value} />
             </span>
 
             {name}
 
             <Chip
                 color="secondary"
-                className="ml-auto text-base font-semibold"
-                radius="sm"
-                variant="flat"
+                className="ml-auto text-sm h-6 border-neutral-700 border-[px]"
+                radius="full"
+                variant="dot"
             >
-                <Children />
+                <span className="font-medium">
+                    <Children />
+                </span>
             </Chip>
         </div>
     );
 }
 
-function FactIcon({ value }: { value: string; }) {
+function FactIcon({
+    name,
+    value
+}: {
+    name: string;
+    value: string;
+}) {
     const { type } = parseValue(value);
 
     switch (type) {
         case "time":
             return <HiClock />;
+    }
+
+    switch (name.toLowerCase()) {
         case "pronouns":
             return <SiPronounsdotpage />;
     }
