@@ -19,10 +19,10 @@ export function User({
 }) {
 
     return (
-        <div className="flex flex-col gap-2 max-w-96 w-full shrink-0">
+        <div className="flex flex-col gap-2 md:max-w-96 w-full shrink-0">
             <Image
                 alt={config.username}
-                className="rounded-2xl avatar-animation duration-500 ease-in-out transform-gpu shadow-black"
+                className="rounded-2xl avatar-animation duration-500 ease-in-out transform-gpu shadow-black aspect-square"
                 height={384}
                 src={config.avatar_url
                     ? config.avatar_url + "?size=512"

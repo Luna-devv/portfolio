@@ -1,9 +1,5 @@
 {
     "id": "821472922140803112",
     "token": "env:TOKEN",
-    "postgres_url": "env:POSTGRES_URL",
-
-    "facts": {
-        "Current Time": "var:TIME"
-    }
+    "postgres_url": "env:POSTGRES_URL"
 }

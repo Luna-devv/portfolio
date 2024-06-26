@@ -1,5 +1,5 @@
 import { Chip } from "@nextui-org/react";
-import { HiClock } from "react-icons/hi";
+import { HiClock, HiHeart } from "react-icons/hi";
 import { SiPronounsdotpage } from "react-icons/si";
 
 import { LocalTime } from "./time";
@@ -55,13 +55,12 @@ function FactIcon({
     const { type } = parseValue(value);
 
     switch (type) {
-        case "time":
-            return <HiClock />;
+        case "time": return <HiClock />;
     }
 
     switch (name.toLowerCase()) {
-        case "pronouns":
-            return <SiPronounsdotpage />;
+        case "pronouns": return <SiPronounsdotpage />;
+        case "sexuality": return <HiHeart />;
     }
 
     return <></>;
@@ -71,9 +70,15 @@ function parseValue(input: string) {
     const regex = /^(\w+)\((.*?)\)$/;
 
     const match = input.match(regex);
-    if (!match) return { type: input, value: input };
+    if (!match) {
+        return {
+            type: input,
+            value: input
+        };
+    }
 
-    const type = match[1];
-    const data = match[2];
-    return { type, data };
+    return {
+        type: match[1],
+        data: match[2]
+    };
 }

@@ -6,6 +6,8 @@ import type { Metadata, Viewport } from "next";
 
 import { Provider } from "./provider";
 
+export const revalidate = false;
+
 export const viewport: Viewport = {
     themeColor: "#b09bf1",
     initialScale: 1

@@ -31,12 +31,9 @@ export function Social({
 
 function PlatformIcon({ platform }: { platform: string; }) {
     switch (platform) {
-        case "discord":
-            return <BsDiscord />;
-        case "github":
-            return <FaGithub />;
-        case "ko-fi":
-            return <SiKofi />;
+        case "discord": return <BsDiscord />;
+        case "github": return <FaGithub />;
+        case "ko-fi": return <SiKofi />;
     }
 
     return <></>;
@@ -44,8 +41,7 @@ function PlatformIcon({ platform }: { platform: string; }) {
 
 function formatName(platform: string, name: string) {
     switch (platform) {
-        case "discord":
-            return `.gg/${name}`;
+        case "discord": return `.gg/${name}`;
     }
 
     return name;

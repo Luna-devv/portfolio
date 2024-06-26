@@ -5,7 +5,7 @@ export default function Page() {
 
     async function update() {
         "use server";
-        console.log(1);
+        revalidatePath("/", "layout");
         revalidatePath("/", "page");
     }
 

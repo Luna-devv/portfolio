@@ -1,5 +1,6 @@
 import { cn } from "@/utils/cn";
 import { lilita } from "@/utils/fonts";
+import { Divider } from "@nextui-org/react";
 
 export default function RootLayout({
     children
@@ -13,6 +14,8 @@ export default function RootLayout({
                 Welcome to the Admin Hell
             </span>
         </div>
+
+        <Divider className="mt-2 mb-4" />
 
         {children}
     </>);
