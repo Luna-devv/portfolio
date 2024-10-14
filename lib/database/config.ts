@@ -1,6 +1,6 @@
 import { db } from ".";
 
-export function getConfig(language: string) {
+export function getConfig() {
     return db
         .selectFrom("config")
         .selectAll()

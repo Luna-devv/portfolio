@@ -8,6 +8,7 @@ interface ConfigTable {
     birthday: string | null; // this should be like "17th April 2002"
     name_pronunciation: string;
     nickname: string;
+    readme: string;
     username: string;
 }
 

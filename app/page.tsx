@@ -1,15 +1,13 @@
 import Markdown from "@/components/markdown";
 import { User } from "@/components/user";
-import { getConfig, getFacts, getSocials } from "@/lib/database/get";
-import { readFile } from "fs/promises";
+import { getConfig, getFacts, getSocials } from "@/lib/database/config";
 
 export const revalidate = false;
 
 export default async function Home() {
-    const about = await readFile(process.cwd() + "/public/about.md", "utf-8");
 
     const [config, facts, socials] = await Promise.all([
-        getConfig("en"),
+        getConfig(),
         getFacts(),
         getSocials()
     ]);
@@ -30,7 +28,7 @@ export default async function Home() {
             />
 
             <div className="text-lg">
-                <Markdown markdown={about} />
+                <Markdown markdown={config.readme} />
             </div>
         </main>
     );
