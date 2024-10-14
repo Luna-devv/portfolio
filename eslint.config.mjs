@@ -7,6 +7,7 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
     {
         files: ["**/*.mjs", "**/*.ts", "**/*.tsx"],
+        ignores: [".next/**/*", ".git/**/*", "node_modules/**/*"],
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
@@ -72,7 +73,6 @@ export default tseslint.config(
             "@typescript-eslint/adjacent-overload-signatures": "error",
             "@typescript-eslint/array-type": "error",
             "@typescript-eslint/ban-ts-comment": "error",
-            "@typescript-eslint/ban-types": "error",
             "@typescript-eslint/class-literal-property-style": "error",
             "@typescript-eslint/consistent-type-definitions": "error",
             "@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],

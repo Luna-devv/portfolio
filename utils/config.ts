@@ -1,3 +1,4 @@
+/* eslint-disable-next-line import/extensions */
 import configdata from "@/public/config.json";
 
 export function config() {

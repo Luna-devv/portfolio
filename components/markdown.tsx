@@ -39,7 +39,6 @@ export default async function Markdown({
 
     return (
         <ReactMarkdown
-            // @ts-expect-error they broke types
             rehypePlugins={[rehypeRaw]}
             components={{
                 h1: (props) => (
