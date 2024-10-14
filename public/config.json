@@ -1,5 +1,7 @@
 {
     "id": "821472922140803112",
-    "token": "env:TOKEN",
+    "token":"env:DISCORD_TOKEN",
+    "client_secret": "env:DISCORD_CLIENT_SECRET",
+    "client_id": "env:DISCORD_CLIENT_ID",
     "postgres_url": "env:POSTGRES_URL"
 }

@@ -1,11 +1,11 @@
-import type { ColumnType } from "kysely";
+import type { ColumnType, Generated, Selectable } from "kysely";
 
 /* Config */
 
 interface ConfigTable {
     avatar_url: string;
     bio: string;
-    birthday: string | null; // this should be like "17 April 2002"
+    birthday: string | null; // this should be like "17th April 2002"
     name_pronunciation: string;
     nickname: string;
     username: string;
@@ -29,17 +29,23 @@ interface UserTable {
     avatar: string | null;
     created_at: ColumnType<Date, string | undefined, never>;
     discord_id: string;
-    id: string;
-    is_owner: boolean;
+    id: Generated<number>;
+    is_owner: ColumnType<boolean, boolean | undefined, boolean | undefined>;
     nickname: string | null;
     username: string;
 }
 
+export type PartialUserTable = Pick<Selectable<UserTable>, "id" | "is_owner">;
+
 interface ReviewTable {
     content: string;
     created_at: ColumnType<Date, string | undefined, never>;
-    id: string;
+    id: Generated<number>;
     is_deleted: boolean;
+    /**
+     * 0 = Negative review
+     * 1 = Positive review
+     */
     rating: 0 | 1;
     user_id: string;
 }
