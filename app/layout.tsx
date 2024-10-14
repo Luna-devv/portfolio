@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Footer } from "@/components/footer";
 import { cn } from "@/utils/cn";
 import { outfit } from "@/utils/fonts";
 import { getBaseUrl } from "@/utils/urls";
@@ -73,6 +74,8 @@ export default function RootLayout({
             >
                 <Provider>
                     {children}
+
+                    <Footer />
                 </Provider>
             </body>
         </html>
