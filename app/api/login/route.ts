@@ -18,7 +18,6 @@ export async function GET(request: Request) {
     }
 
     const grant = await exchangeOauthToken(code);
-    console.log(grant);
 
     if ("message" in grant) {
         return Response.json(grant);
@@ -29,7 +28,6 @@ export async function GET(request: Request) {
     }
 
     const user = await getOauthUser(grant.access_token);
-    console.log(user);
 
     if ("message" in user) {
         return Response.json(user);
@@ -64,5 +62,5 @@ export async function GET(request: Request) {
         }
     );
 
-    return Response.json({ hello: "world" });
+    redirect("/");
 }
