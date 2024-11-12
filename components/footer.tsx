@@ -1,6 +1,7 @@
 import { Chip, Divider } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { BiCopyright } from "react-icons/bi";
 import { HiCube, HiHeart } from "react-icons/hi";
 
@@ -17,7 +18,9 @@ export function Footer() {
                 <Info />
             </div>
 
-            <UserLogin />
+            <Suspense fallback={<></>}>
+                <UserLogin />
+            </Suspense>
         </div>
     </>);
 }
@@ -39,14 +42,14 @@ function Info() {
             <span className="flex gap-1 items-center">
                 <BiCopyright />
                 <span>
-                    <Link href="/" className="hover:underline">Wamellow {new Date(1_635_609_600_000).getFullYear()} - {new Date().getFullYear()}</Link>,
-                    not affiliated with Discord Inc.
+                    <Link href="/" className="hover:underline">Luna {new Date(1_635_609_600_000).getFullYear()} - {new Date().getFullYear()}</Link>,
+                    not affiliated with anyone.
                 </span>
             </span>
             <span className="flex gap-1 items-center">
                 <HiCube />
                 <span className="flex items-center">
-                    Made by
+                    Made with love & autism by
                     {/* Do not alter the href, image src and author name */}
                     <Chip
                         className="relative top-0.5 ml-0.5"
