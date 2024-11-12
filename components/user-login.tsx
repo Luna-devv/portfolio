@@ -6,8 +6,10 @@ import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
-export function UserLogin() {
-    const jar = cookies();
+import { Button } from "./ui/button";
+
+export async function UserLogin() {
+    const jar = await cookies();
 
     if (jar.has("session")) return <User token={jar.get("session")?.value!} />;
     return <Login />;

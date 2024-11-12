@@ -49,7 +49,7 @@ export async function GET(request: Request) {
         is_owner: userdb.is_owner as unknown as boolean
     });
 
-    const jar = cookies();
+    const jar = await cookies();
 
     jar.set(
         "session",
