@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { BsDiscord } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
-import { SiKofi } from "react-icons/si";
+import type { ReactNode } from "react";
+
+import { platforms } from "./constants";
 
 export function Social({
     platform,
@@ -13,11 +13,14 @@ export function Social({
     return (
         <Link
             className="flex items-center gap-2 w-full"
-            href={url}
+            href={url.includes("@")
+                ? `mailto:${url}`
+                : url
+            }
             target="_blank"
         >
             <span className="text-violet-400">
-                <PlatformIcon platform={platform} />
+                {platforms[platform] as ReactNode}
             </span>
 
             {platform.replace(/^\w/, (char) => char.toUpperCase())}
@@ -27,16 +30,6 @@ export function Social({
             </span>
         </Link>
     );
-}
-
-function PlatformIcon({ platform }: { platform: string; }) {
-    switch (platform) {
-        case "discord": return <BsDiscord />;
-        case "github": return <FaGithub />;
-        case "ko-fi": return <SiKofi />;
-    }
-
-    return <></>;
 }
 
 function formatName(platform: string, name: string) {

@@ -1,7 +1,6 @@
 import { getUser } from "@/lib/database/users";
 import { getAvatar } from "@/utils/fn";
 import { verifySession } from "@/utils/jwt";
-import { Button } from "@nextui-org/react";
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,18 +25,20 @@ async function User({ token }: { token: string; }) {
             </span>
 
             <Button
-                as={Link}
+                asChild
                 className="text-neutral-100 text-medium"
-                href="/profile"
+                variant="secondary"
             >
-                <Image
-                    alt="your profile picture"
-                    className="size-6 rounded-full"
-                    height={32}
-                    src={getAvatar(user?.discord_id!, user?.avatar)}
-                    width={32}
-                />
-                {user?.username}
+                <Link href="/profile">
+                    <Image
+                        alt="your profile picture"
+                        className="size-6 rounded-full"
+                        height={32}
+                        src={getAvatar(user?.discord_id!, user?.avatar)}
+                        width={32}
+                    />
+                    {user?.username}
+                </Link>
             </Button>
         </div>
     );
@@ -46,10 +47,12 @@ async function User({ token }: { token: string; }) {
 function Login() {
     return (
         <Button
-            as={Link}
-            href="/api/login"
+            asChild
+            variant="secondary"
         >
-            Login
+            <Link href="/api/login">
+                Login
+            </Link>
         </Button>
     );
 }

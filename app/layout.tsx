@@ -60,7 +60,7 @@ export default function RootLayout({
             data-theme="dark"
             lang="en"
             className={cn(
-                "dark:text-neutral-200 text-neutral-800",
+                "dark dark:text-neutral-200 text-neutral-800",
                 "flex justify-center"
             )}
         >
@@ -72,7 +72,6 @@ export default function RootLayout({
             >
                 <Provider>
                     {children}
-
                     <Footer />
                 </Provider>
             </body>
