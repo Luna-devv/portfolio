@@ -5,7 +5,6 @@ import type { ColumnType, Generated, Selectable } from "kysely";
 interface ConfigTable {
     avatar_url: string;
     bio: string;
-    birthday: string | null; // this should be like "17th April 2002"
     name_pronunciation: string;
     nickname: string;
     readme: string;
