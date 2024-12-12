@@ -1,12 +1,12 @@
 import type { Database } from "@/lib/database/schema";
 import { cn } from "@/utils/cn";
 import { lilita } from "@/utils/fonts";
-import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 import { HiChevronRight } from "react-icons/hi";
 
 import { Fact } from "./facts";
 import { Social } from "./socials";
+import { Separator } from "./ui/separator";
 
 export function User({
     config,
@@ -60,7 +60,7 @@ export function User({
                     ))}
             </div>
 
-            <Divider className="w-full bg-neutral-600/50 mt-2" />
+            <Separator className="w-full bg-neutral-600/50 mt-2" />
 
             <div className="flex flex-col gap-1 mt-2 text-lg">
                 {socials

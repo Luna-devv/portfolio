@@ -20,7 +20,7 @@ export function Social({
             target="_blank"
         >
             <span className="text-violet-400">
-                {platforms[platform] as ReactNode}
+                {platforms[platform as keyof typeof platforms] as ReactNode}
             </span>
 
             {platform.replace(/^\w/, (char) => char.toUpperCase())}

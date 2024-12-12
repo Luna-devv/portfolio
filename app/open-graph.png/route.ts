@@ -1,6 +1,6 @@
 import { db } from "@/lib/database";
 
-export const revalidate = 3_600 * 24; // 24 hours
+export const revalidate = 3_600;
 
 export async function GET() {
     const config = await db

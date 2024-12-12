@@ -1,15 +1,16 @@
-import { Chip, Divider } from "@nextui-org/react";
+import { Chip } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { BiCopyright } from "react-icons/bi";
 import { HiCube, HiHeart } from "react-icons/hi";
 
+import { Separator } from "./ui/separator";
 import { UserLogin } from "./user-login";
 
 export function Footer() {
     return (<>
-        <Divider className="mt-16" />
+        <Separator className="mt-16" />
 
         <div className="flex mt-6 gap-4 justify-between">
 

@@ -7,7 +7,7 @@ export function LocalTime({ timezone }: { timezone: string; }) {
     const [clock, setClock] = useState<string>();
     const [diff, setDiff] = useState<string>();
 
-    const ref = useRef<NodeJS.Timeout>();
+    const ref = useRef<NodeJS.Timeout | null>(null);
 
     function updateTime() {
         const date = new Date(new Date().toLocaleString("en-US", { timeZone: timezone }));
@@ -32,8 +32,8 @@ export function LocalTime({ timezone }: { timezone: string; }) {
         }, 10_000);
 
         return (() => {
-            clearInterval(ref.current);
-            ref.current = undefined;
+            if (ref.current) clearInterval(ref.current);
+            ref.current = null;
         });
     }, []);
 

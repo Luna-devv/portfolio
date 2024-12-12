@@ -73,7 +73,6 @@ export default async function Markdown({
                 del: (props) => <span className="line-through" {...props} />,
                 ins: (props) => <span className="underline" {...props} />,
 
-                // @ts-expect-error inline does exist
                 code: ({ inline, ref, color, ...props }) => {
                     if (inline) return <Code color="secondary" {...props} />;
 

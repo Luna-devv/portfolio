@@ -127,7 +127,6 @@ export default tseslint.config(
             "import/no-useless-path-segments": "error",
             "simple-import-sort/exports": "error",
             "simple-import-sort/imports": ["error", { groups: [["^[^.]"]] }],
-            "import/no-default-export": "error",
             "unicorn/escape-case": "error",
             "unicorn/filename-case": ["error", { cases: { kebabCase: true } }],
             "unicorn/no-hex-escape": "error",
