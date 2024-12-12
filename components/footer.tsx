@@ -1,12 +1,10 @@
 import { Chip } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 import { BiCopyright } from "react-icons/bi";
 import { HiCube, HiHeart } from "react-icons/hi";
 
 import { Separator } from "./ui/separator";
-import { UserLogin } from "./user-login";
 
 export function Footer() {
     return (<>
@@ -19,9 +17,11 @@ export function Footer() {
                 <Info />
             </div>
 
+            {/*
             <Suspense fallback={<></>}>
                 <UserLogin />
             </Suspense>
+            */}
         </div>
     </>);
 }

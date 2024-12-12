@@ -9,7 +9,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (<>
-        <h1 className="text-xl font-medium mb-5">
+        <h1 className="text-2xl font-medium mb-5">
             {"👋 "}Hey,{" "}
             <Suspense fallback={<></>}>
                 <User />

@@ -47,12 +47,23 @@ interface ReviewTable {
      * 1 = Positive review
      */
     rating: 0 | 1;
-    user_id: string;
+    user_id: Generated<number>;
+}
+
+interface BlogTable {
+    created_at: ColumnType<Date, string | undefined, never>;
+    description: string;
+    id: number;
+    slug: string;
+    text: string;
+    title: string;
+    user_id: Generated<number>;
 }
 
 /* Database herself */
 
 export interface Database {
+    blogs: BlogTable;
     config: ConfigTable;
     config_facts: ConfigFactTable;
     config_socials: ConfigSocialTable;

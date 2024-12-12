@@ -13,7 +13,6 @@ export function getUserFromCookies(jar: ReadonlyRequestCookies) {
             const session = await verifySession(token);
             if (!session) return null;
 
-            console.log("fetch");
             return getUser(session.id);
         },
         [token],
