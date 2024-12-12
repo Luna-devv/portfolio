@@ -61,7 +61,7 @@ export default function RootLayout({
             lang="en"
             className={cn(
                 "dark dark:text-neutral-200 text-neutral-800",
-                "flex justify-center"
+                "flex justify-center min-h-[100dvh]"
             )}
         >
             <body
