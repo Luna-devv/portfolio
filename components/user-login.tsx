@@ -1,6 +1,5 @@
-import { getUser } from "@/lib/database/users";
+import { getUserFromCookies } from "@/utils/auth";
 import { getAvatar } from "@/utils/fn";
-import { verifySession } from "@/utils/jwt";
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,13 +9,13 @@ import { Button } from "./ui/button";
 export async function UserLogin() {
     const jar = await cookies();
 
-    if (jar.has("session")) return <User token={jar.get("session")?.value!} />;
+    if (jar.has("session")) return <User />;
     return <Login />;
 }
 
-async function User({ token }: { token: string; }) {
-    const session = await verifySession(token);
-    const user = await getUser(session.id);
+async function User() {
+    const jar = await cookies();
+    const user = await getUserFromCookies(jar);
 
     return (
         <div className="flex flex-col">

@@ -3,6 +3,7 @@ import { exchangeOauthToken, getOauthUrl, getOauthUser } from "@/lib/discord/oau
 import { signSession } from "@/utils/jwt";
 import { getBaseUrl } from "@/utils/urls";
 import { OAuth2Scopes } from "discord-api-types/v10";
+import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -62,5 +63,6 @@ export async function GET(request: Request) {
         }
     );
 
+    revalidateTag("user");
     redirect("/");
 }

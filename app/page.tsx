@@ -11,7 +11,11 @@ const getData = unstable_cache(
         getFacts(),
         getSocials()
     ]),
-    ["configs"]
+    ["configs"],
+    {
+        tags: ["configs"],
+        revalidate: false
+    }
 );
 
 export default async function Home() {
