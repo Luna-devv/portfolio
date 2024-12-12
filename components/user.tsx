@@ -23,12 +23,12 @@ export function User({
             <Image
                 alt={config.username}
                 className="rounded-full avatar-animation duration-500 ease-in-out transform-gpu shadow-black aspect-square"
-                height={384}
+                height={512}
                 src={config.avatar_url
-                    ? config.avatar_url + "?size=512"
+                    ? config.avatar_url
                     : "https://cdn.discordapp.com/embed/avatars/5.png"
                 }
-                width={384}
+                width={512}
             />
 
             <div className={cn(lilita.className, "flex items-end gap-3 mt-4")}>
