@@ -1,4 +1,3 @@
-import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 import twa from "tailwindcss-animate";
 
@@ -69,36 +68,6 @@ const config: Config = {
         }
     },
     plugins: [
-        nextui({
-            themes: {
-                dark: {
-                    colors: {
-                        secondary: {
-                            foreground: "rgb(255 255 255)",
-                            DEFAULT: violet
-                        },
-                        default: {
-                            foreground: "rgb(212 212 212)",
-                            DEFAULT: wamellow
-                        },
-                        overlay: wamellow,
-                        content1: wamellow,
-                        content2: wamellow,
-                        content3: wamellow,
-                        content4: wamellow
-                    }
-                },
-                violet: {
-                    extend: "dark",
-                    colors: {
-                        default: {
-                            foreground: "rgb(255 255 255)",
-                            DEFAULT: violet
-                        }
-                    }
-                }
-            }
-        }),
         twa
     ]
 };

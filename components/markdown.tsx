@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { cn } from "@/utils/cn";
-import { Code } from "@nextui-org/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { HiExternalLink } from "react-icons/hi";
@@ -74,7 +73,7 @@ export default async function Markdown({
                 ins: (props) => <span className="underline" {...props} />,
 
                 code: ({ inline, ref, color, ...props }) => {
-                    if (inline) return <Code color="secondary" {...props} />;
+                    if (inline) return <code {...props} />;
 
                     return (
                         <div

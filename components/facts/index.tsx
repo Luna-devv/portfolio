@@ -1,7 +1,7 @@
-import { Chip } from "@nextui-org/react";
 import { HiClock, HiHeart } from "react-icons/hi";
 import { SiPronounsdotpage } from "react-icons/si";
 
+import { Badge } from "../ui/badge";
 import { LocalTime } from "./time";
 
 export function Fact({
@@ -31,16 +31,15 @@ export function Fact({
 
             {name}
 
-            <Chip
+            <Badge
                 color="secondary"
-                className="ml-auto text-sm h-6 border-neutral-700 border-[1px]"
-                radius="full"
-                variant="dot"
+                className="ml-auto text-sm h-6 border-neutral-700 border-[1px] font-medium gap-1.5"
+                variant="outline"
+                radius="rounded"
             >
-                <span className="font-medium">
-                    <Children />
-                </span>
-            </Chip>
+                <div className="size-2 bg-violet-400 rounded-full" />
+                <Children />
+            </Badge>
         </div>
     );
 }

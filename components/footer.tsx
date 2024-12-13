@@ -1,9 +1,9 @@
-import { Chip } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiCopyright } from "react-icons/bi";
 import { HiCube, HiHeart } from "react-icons/hi";
 
+import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 
 export function Footer() {
@@ -52,22 +52,25 @@ function Info() {
                 <span className="flex items-center">
                     Made with love & autism by
                     {/* Do not alter the href, image src and author name */}
-                    <Chip
-                        className="relative top-0.5 ml-0.5"
-                        as={Link}
+                    <Link
                         href="https://github.com/Luna-devv/portfolio"
-                        startContent={
+                        target="_blank"
+                    >
+                        <Badge
+                            className="relative top-[3px] ml-0.5"
+                            variant="secondary"
+                            radius="rounded"
+                        >
                             <Image
                                 src="https://avatars.githubusercontent.com/u/71079641?s=48&v=4"
                                 alt="Luna-devv"
                                 width={18}
                                 height={18}
-                                className="rounded-full"
+                                className="rounded-full relative right-1.5 px-[1px]"
                             />
-                        }
-                    >
-                        Luna-devv
-                    </Chip>
+                            Luna-devv
+                        </Badge>
+                    </Link>
                 </span>
             </span>
         </div>

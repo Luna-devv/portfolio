@@ -5,8 +5,6 @@ import { outfit } from "@/utils/fonts";
 import { getBaseUrl } from "@/utils/urls";
 import type { Metadata, Viewport } from "next";
 
-import { Provider } from "./provider";
-
 export const viewport: Viewport = {
     themeColor: "#b09bf1",
     initialScale: 1
@@ -70,10 +68,8 @@ export default function RootLayout({
                     "w-full max-w-7xl m-4 mt-12"
                 )}
             >
-                <Provider>
-                    {children}
-                    <Footer />
-                </Provider>
+                {children}
+                <Footer />
             </body>
         </html>
     );
