@@ -29,14 +29,14 @@ export default async function Home() {
     );
 
     return (
-        <main className="flex flex-col md:flex-row gap-8 w-full">
+        <main className="flex flex-col md:flex-row gap-12 w-full">
             <User
                 config={config}
                 facts={facts}
                 socials={socials}
             />
 
-            <div className="text-lg">
+            <div className="text-lg -mt-10">
                 <Markdown markdown={config.readme} />
             </div>
         </main>

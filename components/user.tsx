@@ -19,7 +19,7 @@ export function User({
 }) {
 
     return (
-        <div className="flex flex-col gap-2 md:max-w-96 w-full shrink-0">
+        <div className="flex flex-col gap-2 md:max-w-[22rem] w-full shrink-0">
             <Image
                 alt={config.username}
                 className="rounded-full avatar-animation duration-500 ease-in-out transform-gpu shadow-black aspect-square"
