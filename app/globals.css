@@ -74,3 +74,21 @@ html, body {
     @apply bg-background text-foreground;
     }
 }
+
+::selection {
+    background-color: rgba(139, 92, 246, 0.8);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    background: var(--background-rgb);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.6);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(139, 92, 246, 1);
+}

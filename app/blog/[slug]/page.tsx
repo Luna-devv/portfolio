@@ -67,9 +67,7 @@ export default async function Home({
 
             <Separator className="my-4" />
 
-            <div className="break-all">
-                <Markdown markdown={blog.text} />
-            </div>
+            <Markdown markdown={blog.text} />
         </div>
     );
 }
