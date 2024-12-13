@@ -51,6 +51,7 @@ export default async function Home({
     }
 
     const user = await getUser(blog.user_id);
+    console.log("hi");
 
     return (
         <div>
