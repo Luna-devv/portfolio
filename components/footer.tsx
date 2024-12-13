@@ -28,7 +28,7 @@ export function Footer() {
 
 function LunaIsGay() {
     return (
-        <div className="flex items-center dark:text-neutral-100 text-neutral-900 gap-1 font-semibold">
+        <div className="flex items-center dark:text-neutral-100 gap-1 font-semibold">
             <HiHeart className="relative top-[1px] text-[#f8746e]" />
             <span className="text-xl bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">Luna</span>
             <span className="text-xl bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent">is</span>
@@ -39,7 +39,7 @@ function LunaIsGay() {
 
 function Info() {
     return (
-        <div className="mb-3 text-neutral-500">
+        <div className="mb-3 text-neutral-400">
             <span className="flex gap-1 items-center">
                 <BiCopyright />
                 <span>
@@ -63,7 +63,7 @@ function Info() {
                         >
                             <Image
                                 src="https://avatars.githubusercontent.com/u/71079641?s=48&v=4"
-                                alt="Luna-devv"
+                                alt="avatar"
                                 width={18}
                                 height={18}
                                 className="rounded-full relative right-1.5 px-[1px]"

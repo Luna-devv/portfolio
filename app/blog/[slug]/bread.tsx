@@ -16,7 +16,7 @@ export function Bread({ slug }: { slug: string; }) {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbLink>Blog</BreadcrumbLink>
+                    Blog
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>

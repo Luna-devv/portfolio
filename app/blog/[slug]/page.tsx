@@ -2,7 +2,7 @@ import Markdown from "@/components/markdown";
 import { Separator } from "@/components/ui/separator";
 import { getBlog } from "@/lib/database/blog";
 import { getUser } from "@/lib/database/users";
-import { getBaseUrl } from "@/utils/urls";
+import { getBaseUrl, getCanonicalUrl } from "@/utils/urls";
 import type { Metadata } from "next";
 
 import { Bread } from "./bread";
@@ -33,9 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: blog.title,
         description: blog.description,
 
+        alternates: {
+            canonical: getCanonicalUrl("blog", blog.slug)
+        },
+
         openGraph: {
             title: blog.title,
-            description: blog.description
+            description: blog.description,
+            type: "article"
         },
 
         authors: [{ name: user?.username, url: getBaseUrl() }],
@@ -61,7 +66,7 @@ export default async function Home({
             <Bread slug={blog.slug} />
 
             <h1 className="text-3xl font-medium mt-3 mb-0.5">{blog.title}</h1>
-            <div className="text-neutral-500">
+            <div className="text-neutral-400">
                 Posted by <User id={blog.user_id} /> on <time>{intlDateTime.format(blog.created_at)}</time>
             </div>
 

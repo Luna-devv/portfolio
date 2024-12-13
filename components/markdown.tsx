@@ -101,7 +101,7 @@ export default async function Markdown({
                     <Link
                         href={href || "#"}
                         target="_blank"
-                        className="text-violet-400 hover:underline"
+                        className="text-violet-400 underline decoration-black hover:decoration-current duration-100"
                         {...props}
                     >
                         {children} {!JSON.stringify(children).includes("http") && <HiExternalLink className="inline" />}
