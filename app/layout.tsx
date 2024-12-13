@@ -4,6 +4,7 @@ import { cn } from "@/utils/cn";
 import { outfit } from "@/utils/fonts";
 import { getBaseUrl } from "@/utils/urls";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 
 export const viewport: Viewport = {
     themeColor: "#b09bf1",
@@ -62,6 +63,8 @@ export default function RootLayout({
                 "flex justify-center min-h-[100dvh]"
             )}
         >
+            <Script defer data-domain="lunish.nl" src="https://analytics.wamellow.com/js/script.outbound-links.js" />
+
             <body
                 className={cn(
                     outfit.className,
