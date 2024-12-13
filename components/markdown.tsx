@@ -43,7 +43,7 @@ export default async function Markdown({
                 h1: (props) => (
                     <Link
                         href={`#${createHId(props.children)}`}
-                        className="flex mt-10 mb-3 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline"
+                        className="flex mt-10 mb-3 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline w-fit"
                     >
                         <h2 id={createHId(props.children)} className="text-3xl font-semibold" {...props} />
                     </Link>
@@ -52,7 +52,7 @@ export default async function Markdown({
                 h2: (props) => (
                     <Link
                         href={`#${createHId(props.children)}`}
-                        className="flex mt-6 mb-2 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline"
+                        className="flex mt-6 mb-2 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline w-fit"
                     >
                         <h1 id={createHId(props.children)} className="text-2xl font-semibold" {...props} />
                     </Link>
@@ -61,7 +61,7 @@ export default async function Markdown({
                 h3: (props) => (
                     <Link
                         href={`#${createHId(props.children)}`}
-                        className="flex mt-6 mb-2 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline"
+                        className="flex mt-6 mb-2 cursor-pointer dark:text-neutral-100 text-neutral-900 hover:underline w-fit"
                     >
                         <h3 id={createHId(props.children)} className="text-xl font-semibold" {...props} />
                     </Link>
@@ -88,13 +88,12 @@ export default async function Markdown({
                     return (
                         <span
                             className={cn(
-                                "w-fit flex-col items-center inline",
+                                "w-fit flex-col items-center inline !mt-2",
                                 alt === "emoji" ? "inline" : "flex",
                                 isFullWidth ? "max-w-3xl" : "max-w-lg"
                             )}
                         >
                             <img alt={alt} className="rounded-md" loading="lazy" {...props} />
-                            {alt && alt !== "emoji" && <span aria-hidden="true" className="text-neutral-500 font-medium relative bottom-1">{alt}</span>}
                         </span>
                     );
                 },
@@ -105,7 +104,7 @@ export default async function Markdown({
                         className="text-violet-400 hover:underline"
                         {...props}
                     >
-                        {children} <HiExternalLink className="inline" />
+                        {children} {!JSON.stringify(children).includes("http") && <HiExternalLink className="inline" />}
                     </Link>
                 ),
 
