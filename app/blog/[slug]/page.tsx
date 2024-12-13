@@ -1,13 +1,17 @@
+import Markdown from "@/components/markdown";
 import { Separator } from "@/components/ui/separator";
 import { getBlog } from "@/lib/database/blog";
 import { getUser } from "@/lib/database/users";
 import { getBaseUrl } from "@/utils/urls";
 import type { Metadata } from "next";
 
+import { Bread } from "./bread";
+import { User } from "./user";
+
 export const revalidate = false;
 export const dynamic = "force-static";
 
-const intl = new Intl.DateTimeFormat("en-US", {
+const intlDateTime = new Intl.DateTimeFormat("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -50,19 +54,22 @@ export default async function Home({
         return <h1>Blog not found</h1>;
     }
 
-    const user = await getUser(blog.user_id);
     console.log("hi");
 
     return (
         <div>
-            <h1 className="text-2xl font-medium mb-1">{blog.title}</h1>
-            <p className="text-neutral-500">
-                Posted by <a href={getBaseUrl()}>@{user?.username}</a> on <time>{intl.format(blog.created_at)}</time>
-            </p>
+            <Bread slug={blog.slug} />
+
+            <h1 className="text-3xl font-medium mt-3 mb-0.5">{blog.title}</h1>
+            <div className="text-neutral-500">
+                Posted by <User id={blog.user_id} /> on <time>{intlDateTime.format(blog.created_at)}</time>
+            </div>
 
             <Separator className="my-4" />
 
-            <p className="break-all">{blog.text}</p>
+            <div className="break-all">
+                <Markdown markdown={blog.text} />
+            </div>
         </div>
     );
 }
