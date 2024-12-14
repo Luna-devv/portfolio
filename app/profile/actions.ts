@@ -14,5 +14,6 @@ export async function logout() {
 
 export async function revalidate() {
     revalidateTag("configs");
+    revalidateTag("blogs");
     redirect("/");
 }

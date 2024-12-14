@@ -25,7 +25,7 @@ export default async function Page() {
                             variant="secondary"
                             type="submit"
                         >
-                            Revalidate
+                            Revalidate Pages
                         </Button>
                     </form>
                 )}
