@@ -79,7 +79,6 @@ export default async function Employ() {
                     ["Automation and industrial electronics", 2],
                     ["Computer-aided project development", 1],
                     ["Laboratory", 2]
-
                 ]}
             />
 
