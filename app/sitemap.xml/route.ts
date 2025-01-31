@@ -13,6 +13,10 @@ export async function GET() {
         {
             url: getCanonicalUrl(),
             priority: 1
+        },
+        {
+            url: getCanonicalUrl("employ"),
+            priority: 1
         }
     ];
 

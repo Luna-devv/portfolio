@@ -1,0 +1,44 @@
+I am Luna, an enthusiastic Electrical Engineering student at a **Federal Higher Technical Teaching and Research Institute**, working towards my **Matura in Electrical Engineering**. My passion for technology and programming has equipped me with a diverse skill set, making me a valuable asset to businesses and companies seeking innovative solutions. I also have a strong interest in Austrian and European law, particularly in areas of privacy, digital rights, and freedom.
+<br />
+<br />
+
+I have a native fluency in both English and German, as demonstrated in the marks table below.
+
+## Electrical Engineering
+
+- **Circuit Design & Electrical Systems:** Skilled in designing and building electrical circuits, including motor control circuits (i.e.: Reversing contactor circuits) and similar systems.
+- **PCB Soldering & Assembly:** Experienced in **soldering and assembling complex circuit boards**, ensuring high reliability and performance.
+- **Technical Drawings & 3D Modeling:** Proficient in **EPLAN** and **AutoCAD** for creating electrical schematics and **3D designs**.
+- **Everyday Electrical Engineering Tasks:** Confident in handling **standard electrical engineering tasks**, from troubleshooting to installation and maintenance.
+
+## Programming & Software Development
+
+- **Programming Languages:** Proficient in JavaScript, TypeScript, and Go, enabling me to develop robust and efficient applications.
+- **Web Development:** Experienced in both frontend and backend development, utilizing HTML, CSS, and frameworks such as Tailwind, React, and Next.js to create dynamic and responsive web applications.
+- **PLC Programming:** Skilled in programming Programmable Logic Controllers (PLCs) using structured text, with practical experience in projects like traffic light systems.
+<br />
+<br />
+
+GitHub: [github.com/Luna-devv](https://github.com/Luna-devv) <br />
+GitLab: [gitlab.com/mwlica](https://gitlab.com/mwlica)
+
+## Professional Experience
+
+I have collaborated with various companies, including an independent constructor in the Formula 1 industry, where I contributed to warehouse management programs and similar projects.
+
+## Availability
+
+- **On-Site:** Available for in-person engagements (Electrical Engineering) in and around Vienna and Lower Austria.
+- **Remote:** Open to remote programming projects, providing flexibility and adaptability to meet your business needs.
+
+## Compensation
+
+I adhere to the Austrian 'Kollektivvertrag' (Collective Agreement) and comply with Austrian law regarding payment structures. For detailed information on the collective agreement for the electrical and electronics industry, please refer to the official documentation. ([feei.at](https://www.feei.at/wp-content/uploads/2024/06/caeei-2024-06-18.pdf))
+
+## Contact
+
+To discuss potential collaborations or to learn more about how I can contribute to your projects, please feel free to reach out through email at <a href="mailto:luna@wamellow.com">luna@wamellow.com</a>.
+<br />
+<br />
+
+I look forward to the opportunity to work together and bring innovative solutions to your business.

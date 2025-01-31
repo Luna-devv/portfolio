@@ -114,7 +114,9 @@ export default async function Markdown({
                 td: ({ ...props }) => <td className="px-2 py-1 divide-x-8 divide-wamellow break-all" {...props} />,
 
                 ol: ({ ...props }) => <ol className="list-decimal list-inside space-y-1 marker:text-neutral-300/40 my-1" {...props} />,
-                ul: ({ ...props }) => <ul className="list-disc list-inside space-y-1 marker:text-neutral-300/40 my-1" {...props} />
+                ul: ({ ...props }) => <ul className="list-disc list-inside space-y-1 marker:text-neutral-300/40 my-1" {...props} />,
+
+                p: ({ ...props }) => <span {...props} />
             }}
         >
             {parseDiscordMarkdown(markdown)}
