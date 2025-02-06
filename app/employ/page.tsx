@@ -54,7 +54,7 @@ export default async function Employ() {
 
             <h1 className="text-3xl font-medium mt-16 mb-0.5">School Report Card</h1>
             <div className="text-neutral-400">
-                A table of my latest marks in the FHTTaRI (HTBLuVA).
+                A table of my latest assessments at the FHTTaRI (HTBLuVA).
             </div>
 
             <Separator className="my-4" />
