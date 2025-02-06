@@ -66,18 +66,18 @@ export default async function Employ() {
 
             <Marks
                 marks={[
-                    ["Behaviour at school", 1],
-                    ["Religion", 1],
-                    ["German and communication", 2],
+                    ["Behaviour", 1],
+                    ["Ethics", 1],
+                    ["German and Communication", 2],
                     ["English", 1],
-                    ["Applied maths", 1],
-                    ["Business management", 1],
-                    ["Energy systems", 3],
-                    ["Drive technology and mechatronics workshop and production technology", 1],
-                    ["Drive technology and mechatronics", 1],
+                    ["Applied Maths", 1],
+                    ["Business Management", 1],
+                    ["Energy Systems", 3],
+                    ["Drive Technology and Mechatronics Workshop and Production Engineering", 1],
+                    ["Drive Technology and Mechatronics", 1],
                     ["Automation and Industrial Electronics Workshop and Production Engineering", 1],
-                    ["Automation and industrial electronics", 2],
-                    ["Computer-aided project development", 1],
+                    ["Automation and Industrial Electronics", 2],
+                    ["Computer-Aided Project Development", 1],
                     ["Laboratory", 2]
                 ]}
             />
