@@ -53,11 +53,11 @@ interface ReviewTable {
 interface BlogTable {
     created_at: ColumnType<Date, string | undefined, never>;
     description: string;
-    id: number;
+    id: Generated<number>;
     slug: string;
     text: string;
     title: string;
-    user_id: Generated<number>;
+    user_id: number;
 }
 
 /* Database herself */

@@ -59,7 +59,7 @@ export async function GET(request: Request) {
             secure: getBaseUrl().startsWith("https://"),
             httpOnly: true,
             sameSite: "strict",
-            domain: getBaseUrl().split("://")[1]
+            domain: getBaseUrl().split("://")[1]?.split(":")[0]
         }
     );
 
