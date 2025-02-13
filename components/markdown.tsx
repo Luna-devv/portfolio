@@ -88,7 +88,7 @@ export default async function Markdown({
                     return (
                         <span
                             className={cn(
-                                "w-fit flex-col items-center inline !mt-2",
+                                "w-fit flex-col items-center inline mt-2!",
                                 alt === "emoji" ? "inline" : "flex",
                                 isFullWidth ? "max-w-3xl" : "max-w-lg"
                             )}
