@@ -72,9 +72,7 @@ export default async function Markdown({
                 del: (props) => <span className="line-through" {...props} />,
                 ins: (props) => <span className="underline" {...props} />,
 
-                code: ({ inline, ref, color, ...props }) => {
-                    if (inline) return <code {...props} />;
-
+                code: ({ ref, color, ...props }) => {
                     return (
                         <div
                             className="bg-wamellow border border-wamellow-light text-neutral-200 rounded-md p-3 my-2 break-all"
