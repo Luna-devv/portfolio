@@ -68,7 +68,7 @@ export default function RootLayout({
             <body
                 className={cn(
                     outfit.className,
-                    "w-full max-w-7xl m-4 mt-12"
+                    "w-full max-w-6xl m-4 mt-12"
                 )}
             >
                 {children}
