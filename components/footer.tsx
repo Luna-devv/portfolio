@@ -30,9 +30,9 @@ function LunaIsGay() {
     return (
         <div className="flex items-center dark:text-neutral-100 gap-1 font-semibold">
             <HiHeart className="relative top-[1px] text-[#f8746e]" />
-            <span className="text-xl bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">Luna</span>
-            <span className="text-xl bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent">is</span>
-            <span className="text-xl bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">Gay</span>
+            <span className="text-xl bg-linear-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">Luna</span>
+            <span className="text-xl bg-linear-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent">is</span>
+            <span className="text-xl bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">Gay</span>
         </div>
     );
 }
