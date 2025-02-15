@@ -1,4 +1,5 @@
 import type { ColumnType, Generated, Selectable } from "kysely";
+import { z } from "zod";
 
 /* Config */
 
@@ -59,6 +60,13 @@ interface BlogTable {
     title: string;
     user_id: number;
 }
+
+export const blog = z.object({
+    description: z.string(),
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+    text: z.string(),
+    title: z.string()
+});
 
 /* Database herself */
 

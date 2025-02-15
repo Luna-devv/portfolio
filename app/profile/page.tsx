@@ -20,7 +20,6 @@ export default async function Page() {
                 </Button>
             </form>
             {await isOwner(jar) && (
-
                 <form action={revalidate}>
                     <Button
                         variant="secondary"

@@ -16,11 +16,12 @@ import {
     InputBaseInput
 } from "@/components/ui/input-base";
 import { Textarea } from "@/components/ui/textarea";
+import { blog } from "@/lib/database/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { redirect } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { z } from "zod";
 
 interface ApiError {
     message: string;
@@ -30,23 +31,16 @@ interface ApiResponse {
     idk: unknown;
 }
 
-export const schema = z.object({
-    description: z.string(),
-    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-    text: z.string(),
-    title: z.string()
-});
-
 export function ComposeBlogPost({
     ...props
 }: React.HTMLAttributes<HTMLFormElement>) {
-    const [error, setError] = useState("");
+    const [error, setError] = useState<string>("");
 
-    const form = useForm<z.infer<typeof schema>>({
-        resolver: zodResolver(schema)
+    const form = useForm<z.infer<typeof blog>>({
+        resolver: zodResolver(blog)
     });
 
-    async function create(values: z.infer<typeof schema>) {
+    async function create(values: z.infer<typeof blog>) {
         const res = await fetch("/api/blogs", {
             method: "POST",
             body: JSON.stringify(values)
