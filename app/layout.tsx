@@ -63,7 +63,7 @@ export default function RootLayout({
                 "flex justify-center min-h-[100dvh]"
             )}
         >
-            <Script defer data-domain={process.env.NEXT_PUBLIC_BASE_URL?.split("://")[1]} src="https://analytics.wamellow.com/js/script.outbound-links.js" />
+            <Script defer data-domain="shi.gg" src="https://analytics.wamellow.com/js/script.outbound-links.js" />
 
             <body
                 className={cn(
