@@ -75,7 +75,7 @@ export default async function Markdown({
                 code: ({ ref, color, ...props }) => {
                     return (
                         <div
-                            className="bg-wamellow border border-wamellow-light text-neutral-200 rounded-md p-3 my-2 break-all"
+                            className="bg-wamellow border border-wamellow-light text-neutral-200 rounded-md p-3 my-2 break-all overflow-x-scroll max-w-full w-full"
                             {...props}
                         />
                     );
