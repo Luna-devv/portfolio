@@ -57,7 +57,8 @@ export function User({
                             name={fact.name}
                             value={fact.value}
                         />
-                    ))}
+                    ))
+                }
             </div>
 
             <Separator className="w-full bg-neutral-600/50 mt-2" />
@@ -71,7 +72,8 @@ export function User({
                             platform={social.platform}
                             url={social.url}
                         />
-                    ))}
+                    ))
+                }
             </div>
         </div>
     );

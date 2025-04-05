@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { unstable_cache } from "next/cache";
 
 import { Bread } from "./bread";
+import { BlogFooter } from "./footer";
 import { User } from "./user";
 
 export const revalidate = false;
@@ -80,6 +81,8 @@ export default async function Home({
             <Separator className="my-4" />
 
             <Markdown markdown={blog.text} />
+
+            <BlogFooter userId={blog.user_id} />
         </div>
     );
 }
