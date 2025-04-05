@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -15,5 +15,6 @@ export async function logout() {
 export async function revalidate() {
     revalidateTag("configs");
     revalidateTag("blogs");
+    revalidatePath("/sitemap.xml");
     redirect("/");
 }
